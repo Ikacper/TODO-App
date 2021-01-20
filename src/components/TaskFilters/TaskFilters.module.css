@@ -1,0 +1,22 @@
+.taskFilters {
+  display: flex;
+  width: 60%;
+}
+
+.filter {
+  margin: 0 0 1rem 0;
+}
+
+.button {
+  background-color: transparent;
+  color: #999;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem 1rem 2rem 0;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: white;
+}

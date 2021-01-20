@@ -1,0 +1,14 @@
+:global(*) {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  background-color: #222222;
+}
+.wrapper {
+  text-align: center;
+}

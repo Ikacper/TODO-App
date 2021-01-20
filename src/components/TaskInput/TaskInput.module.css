@@ -1,0 +1,20 @@
+.inputWrapper {
+
+}
+
+.taskInput {
+    margin: 6rem auto 1rem auto;
+    font-size: 2rem;
+    border: 0;
+    border-bottom: 1px dotted #666;
+    height: 3rem;
+    width: 60%;
+    background: transparent;
+    color: white;
+    padding: 0 0 5px;
+    box-sizing: border-box;
+}
+
+.taskInput:focus {
+    outline: none;
+}
