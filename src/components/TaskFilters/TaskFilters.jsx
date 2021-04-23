@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TaskFilters.module.css';
@@ -6,6 +5,18 @@ import TaskItem from '../TaskItem/TaskItem';
 
 function TaskFilters({ tasks, setTask, setTasks }) {
   const [filter, setFilter] = useState('All');
+
+  let displayTasks = '';
+
+  if(filter === 'All') {
+    displayTasks = tasks.map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />)
+  } else if(filter === 'Active') {
+    displayTasks = tasks.filter((item) => item.completed === false).map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />)
+  } else if(filter === 'Completed') {
+    displayTasks = tasks.filter((item) => item.completed).map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />)
+  } else {
+    displayTasks = ''
+  }
 
   return (
     <>
@@ -21,9 +32,7 @@ function TaskFilters({ tasks, setTask, setTasks }) {
         </li>
       </ul>
       <div>
-        {filter === 'All' ? tasks.map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />)
-          : filter === 'Active' ? tasks.filter((item) => item.completed === false).map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />)
-            : filter === 'Completed' ? tasks.filter((item) => item.completed).map((item) => <TaskItem key={item.id} item={item} setTask={setTask} tasks={tasks} setTasks={setTasks} />) : ''}
+        {displayTasks}
       </div>
     </>
   );
